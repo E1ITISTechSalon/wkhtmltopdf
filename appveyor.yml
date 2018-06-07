@@ -16,6 +16,6 @@ build_script:
   - python ..\packaging\build vagrant --version - - %TARGET% c:\wkhtmltopdf\wkhtmltopdf
 
 artifacts:
-  - path: ..\..\bin
+  - path: ..\..\bin\*
     name: bin
     type: zip
