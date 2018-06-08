@@ -15,7 +15,7 @@ install:
 build_script:
   - python ..\packaging\build vagrant --version - - %TARGET% c:\wkhtmltopdf\wkhtmltopdf
 
-artifacts:
-  - path: wkhtmltox*.*
-    name: bin
-    type: zip
+after_build
+  - cd C:\wkhtmltopdf\build\wkhtmltox\bin
+  - 7z a release.zip *
+  - appveyor PushArtifact release.zip
